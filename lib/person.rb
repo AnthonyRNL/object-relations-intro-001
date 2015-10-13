@@ -1,5 +1,33 @@
 #code along here!
 
+class Person
+  attr_accessor :name, :happiness
+  attr_reader :partner
+  def initialize(name)
+    @name = name
+    @happiness = 5
+    @partner = ""
+  end
+
+  def go_on_a_date(person, level)
+    if level == false
+      self.happiness -= 1
+      person.happiness -= 1
+    else
+      self.happiness += 1
+      person.happiness += 1
+    end
+  end
+
+  def partner=(name)
+    @partner = name
+  end
+
+  def get_married(name)
+    self.partner = name
+    name.partner = self
+  end
+end
 
 #############
 
@@ -16,6 +44,3 @@
 #beyonce.get_married(jayz)
 #puts "Beyonce's partner is #{beyonce.partner.name}"
 #puts "Jay-Z's partner is #{jayz.partner.name}"
-
-
-
